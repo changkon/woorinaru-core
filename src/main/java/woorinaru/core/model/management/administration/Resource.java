@@ -1,6 +1,8 @@
 package woorinaru.core.model.management.administration;
 
-public interface Resource {
+import woorinaru.core.model.base.Identifiable;
+
+public interface Resource extends Identifiable {
     byte[] getResource();
     String getDescription();
 }

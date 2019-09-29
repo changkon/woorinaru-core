@@ -17,28 +17,28 @@ public class UserServiceImpl<U extends User> implements UserService<U> {
     public UserServiceImpl() {}
 
     @Override
-    public U createUser(String username, String password) {
-        return userDao.createUser(username, password);
+    public void create(U user) {
+        userDao.create(user);
     }
 
     @Override
-    public Optional<U> getUser(String username) {
-        return userDao.getUser(username);
+    public Optional<U> get(int id) {
+        return userDao.get(id);
     }
 
     @Override
-    public void deleteUser(U user) {
-        userDao.deleteUser(user);
+    public void delete(U user) {
+        userDao.delete(user);
     }
 
     @Override
-    public U modifyUser(U user) {
-        return userDao.modifyUser(user);
+    public void modify(U user) {
+        userDao.modify(user);
     }
 
     @Override
-    public List<U> getAllUsers() {
-        return userDao.getAllUsers();
+    public List<U> getAll() {
+        return userDao.getAll();
     }
 
     public UserDao<U> getUserDao() {

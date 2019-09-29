@@ -5,10 +5,5 @@ import woorinaru.core.model.user.User;
 import java.util.List;
 import java.util.Optional;
 
-public interface UserService<U extends User> {
-    U createUser(String username, String password);
-    Optional<U> getUser(String username);
-    void deleteUser(U user);
-    U modifyUser(U user);
-    List<U> getAllUsers();
+public interface UserService<U extends User> extends GenericService<U> {
 }
