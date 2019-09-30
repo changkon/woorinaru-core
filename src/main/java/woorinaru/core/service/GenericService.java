@@ -3,7 +3,7 @@ package woorinaru.core.service;
 import java.util.List;
 import java.util.Optional;
 
-public interface GenericService<E> extends UserAuthService {
+public interface GenericService<E> {
     void create(E e);
     Optional<E> get(int id);
     void delete(E e);

@@ -6,7 +6,7 @@ import woorinaru.core.model.user.User;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class AbstractGenericService<E, D extends GenericDao<E>> implements GenericService<E> {
+public abstract class AbstractGenericService<E, D extends GenericDao<E>> implements GenericService<E>, UserAuthService {
 
     protected D dao;
 
