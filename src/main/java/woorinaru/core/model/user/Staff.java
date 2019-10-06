@@ -2,7 +2,26 @@ package woorinaru.core.model.user;
 
 import woorinaru.core.model.management.administration.Team;
 
-public interface Staff extends User {
-    StaffRole getRole();
-    Team getTeam();
+public class Staff extends User {
+
+    private StaffRole staffRole;
+    private Team team;
+
+    public Staff() {}
+
+    public StaffRole getStaffRole() {
+        return staffRole;
+    }
+
+    public void setStaffRole(StaffRole staffRole) {
+        this.staffRole = staffRole;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
 }

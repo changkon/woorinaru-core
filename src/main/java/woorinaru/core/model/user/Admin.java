@@ -1,4 +1,4 @@
 package woorinaru.core.model.user;
 
-public interface Admin extends User {
+public class Admin extends User {
 }

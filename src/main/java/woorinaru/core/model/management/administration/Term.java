@@ -5,7 +5,36 @@ import woorinaru.core.model.user.Staff;
 
 import java.util.List;
 
-public interface Term extends Identifiable {
-    int getTerm();
-    List<Staff> getStaffMembers();
+public class Term implements Identifiable {
+
+    private int id;
+    private int term;
+    private List<Staff> staffMembers;
+
+    public Term() {}
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getTerm() {
+        return term;
+    }
+
+    public void setTerm(int term) {
+        this.term = term;
+    }
+
+    public void setStaffMembers(List<Staff> staffMembers) {
+        this.staffMembers = staffMembers;
+    }
+
+    public List<Staff> getStaffMembers() {
+        return staffMembers;
+    }
 }

@@ -1,4 +1,8 @@
 package woorinaru.core.model.management.administration;
 
-public interface IntermediateClass extends WooriClass {
+public class IntermediateClass extends WooriClass {
+    @Override
+    public Grade getGrade() {
+        return Grade.INTERMEDIATE;
+    }
 }

@@ -1,4 +1,8 @@
 package woorinaru.core.model.management.administration;
 
-public interface OutingClass extends WooriClass {
+public class OutingClass extends WooriClass {
+    @Override
+    public Grade getGrade() {
+        return Grade.OUTING;
+    }
 }
