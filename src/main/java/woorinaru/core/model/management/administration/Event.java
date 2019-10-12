@@ -1,29 +1,20 @@
 package woorinaru.core.model.management.administration;
 
-import woorinaru.core.model.base.Identifiable;
+import woorinaru.core.model.user.Student;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Collection;
 
-public class Event implements Identifiable {
+public class Event {
 
-    private int id;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private String address;
     private String description;
-    private List<WooriClass> wooriClasses;
+    private Collection<WooriClass> wooriClasses;
+    private Collection<Student> studentReservations;
 
     public Event() {}
-
-    @Override
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
@@ -41,7 +32,7 @@ public class Event implements Identifiable {
         this.description = description;
     }
 
-    public void setWooriClasses(List<WooriClass> wooriClasses) {
+    public void setWooriClasses(Collection<WooriClass> wooriClasses) {
         this.wooriClasses = wooriClasses;
     }
 
@@ -61,7 +52,15 @@ public class Event implements Identifiable {
         return description;
     }
 
-    public List<WooriClass> getWooriClasses() {
+    public Collection<WooriClass> getWooriClasses() {
         return wooriClasses;
+    }
+
+    public Collection<Student> getStudentReservations() {
+        return studentReservations;
+    }
+
+    public void setStudentReservations(Collection<Student> studentReservations) {
+        this.studentReservations = studentReservations;
     }
 }

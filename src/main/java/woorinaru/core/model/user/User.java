@@ -1,17 +1,17 @@
 package woorinaru.core.model.user;
 
-import woorinaru.core.model.base.Identifiable;
 import woorinaru.core.model.management.administration.Resource;
 
-import java.util.List;
+import java.time.LocalDateTime;
+import java.util.Collection;
 
-public abstract class User implements Identifiable {
+public abstract class User {
 
-    protected int id;
     protected String name;
     protected String nationality;
     protected String email;
-    protected List<Resource> favouriteResources;
+    protected Collection<Resource> favouriteResources;
+    protected LocalDateTime signupDateTime;
 
     public User() {}
 
@@ -27,7 +27,7 @@ public abstract class User implements Identifiable {
         return email;
     }
 
-    public List<Resource> getFavouriteResources() {
+    public Collection<Resource> getFavouriteResources() {
         return favouriteResources;
     }
 
@@ -43,16 +43,15 @@ public abstract class User implements Identifiable {
         this.email = email;
     }
 
-    public void setFavouriteResources(List<Resource> favouriteResources) {
+    public void setFavouriteResources(Collection<Resource> favouriteResources) {
         this.favouriteResources = favouriteResources;
     }
 
-    @Override
-    public int getId() {
-        return id;
+    public LocalDateTime getSignupDateTime() {
+        return signupDateTime;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSignupDateTime(LocalDateTime signupDateTime) {
+        this.signupDateTime = signupDateTime;
     }
 }

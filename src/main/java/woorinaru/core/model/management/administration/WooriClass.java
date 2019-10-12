@@ -1,50 +1,39 @@
 package woorinaru.core.model.management.administration;
 
-import woorinaru.core.model.base.Identifiable;
 import woorinaru.core.model.user.Staff;
 import woorinaru.core.model.user.Student;
 
-import java.util.List;
+import java.util.Collection;
 
-public abstract class WooriClass implements Identifiable {
+public abstract class WooriClass {
 
-    protected int id;
-    protected List<Resource> resources;
-    protected List<Staff> staff;
-    protected List<Student> students;
+    protected Collection<Resource> resources;
+    protected Collection<Staff> staff;
+    protected Collection<Student> students;
 
     public WooriClass() {}
 
-    @Override
-    public int getId() {
-        return id;
-    }
-
-    public List<Resource> getResources() {
+    public Collection<Resource> getResources() {
         return resources;
     }
 
-    public List<Staff> getStaff() {
+    public Collection<Staff> getStaff() {
         return staff;
     }
 
-    public List<Student> getStudents() {
+    public Collection<Student> getStudents() {
         return students;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setResources(List<Resource> resources) {
+    public void setResources(Collection<Resource> resources) {
         this.resources = resources;
     }
 
-    public void setStaff(List<Staff> staff) {
+    public void setStaff(Collection<Staff> staff) {
         this.staff = staff;
     }
 
-    public void setStudents(List<Student> students) {
+    public void setStudents(Collection<Student> students) {
         this.students = students;
     }
 
