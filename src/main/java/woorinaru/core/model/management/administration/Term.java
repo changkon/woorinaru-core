@@ -5,6 +5,7 @@ import woorinaru.core.model.user.Staff;
 
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.List;
 
 public class Term implements Identifiable {
 
@@ -13,6 +14,7 @@ public class Term implements Identifiable {
     private Collection<Staff> staffMembers;
     private LocalDate startDate;
     private LocalDate endDate;
+    private List<Event> events;
 
     public Term() {}
 
@@ -55,5 +57,13 @@ public class Term implements Identifiable {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
     }
 }
