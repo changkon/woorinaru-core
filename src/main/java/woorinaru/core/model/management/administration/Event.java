@@ -1,12 +1,14 @@
 package woorinaru.core.model.management.administration;
 
+import woorinaru.core.model.base.Identifiable;
 import woorinaru.core.model.user.Student;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
 
-public class Event {
+public class Event implements Identifiable {
 
+    private int id;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private String address;
@@ -15,6 +17,14 @@ public class Event {
     private Collection<Student> studentReservations;
 
     public Event() {}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;

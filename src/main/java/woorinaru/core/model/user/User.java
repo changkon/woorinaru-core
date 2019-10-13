@@ -1,12 +1,14 @@
 package woorinaru.core.model.user;
 
+import woorinaru.core.model.base.Identifiable;
 import woorinaru.core.model.management.administration.Resource;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
 
-public abstract class User {
+public abstract class User implements Identifiable {
 
+    protected int id;
     protected String name;
     protected String nationality;
     protected String email;
@@ -14,6 +16,14 @@ public abstract class User {
     protected LocalDateTime signupDateTime;
 
     public User() {}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

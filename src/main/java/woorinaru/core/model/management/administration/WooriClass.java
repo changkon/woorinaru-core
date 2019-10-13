@@ -1,12 +1,14 @@
 package woorinaru.core.model.management.administration;
 
+import woorinaru.core.model.base.Identifiable;
 import woorinaru.core.model.user.Staff;
 import woorinaru.core.model.user.Student;
 
 import java.util.Collection;
 
-public abstract class WooriClass {
+public abstract class WooriClass implements Identifiable {
 
+    protected int id;
     protected Collection<Resource> resources;
     protected Collection<Staff> staff;
     protected Collection<Student> students;
@@ -35,6 +37,15 @@ public abstract class WooriClass {
 
     public void setStudents(Collection<Student> students) {
         this.students = students;
+    }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public abstract Grade getGrade();

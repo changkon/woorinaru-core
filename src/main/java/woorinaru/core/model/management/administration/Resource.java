@@ -1,11 +1,23 @@
 package woorinaru.core.model.management.administration;
 
-public class Resource {
+import woorinaru.core.model.base.Identifiable;
 
+public class Resource implements Identifiable {
+
+    private int id;
     private byte[] resource;
     private String description;
 
     public Resource() {}
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public byte[] getResource() {
         return resource;

@@ -1,5 +1,6 @@
 module woorinaru.core {
     // Exports Domain Model classes
+    exports woorinaru.core.model.base;
     exports woorinaru.core.model.management.administration;
     exports woorinaru.core.model.user;
     // Exports SPI and API
