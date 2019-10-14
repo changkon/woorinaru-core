@@ -13,7 +13,7 @@ public abstract class User implements Identifiable {
     protected String nationality;
     protected String email;
     protected Collection<Resource> favouriteResources;
-    protected LocalDateTime signupDateTime;
+    protected LocalDateTime signUpDateTime;
 
     public User() {}
 
@@ -57,11 +57,11 @@ public abstract class User implements Identifiable {
         this.favouriteResources = favouriteResources;
     }
 
-    public LocalDateTime getSignupDateTime() {
-        return signupDateTime;
+    public LocalDateTime getSignUpDateTime() {
+        return signUpDateTime;
     }
 
-    public void setSignupDateTime(LocalDateTime signupDateTime) {
-        this.signupDateTime = signupDateTime;
+    public void setSignUpDateTime(LocalDateTime signupDateTime) {
+        this.signUpDateTime = signupDateTime;
     }
 }

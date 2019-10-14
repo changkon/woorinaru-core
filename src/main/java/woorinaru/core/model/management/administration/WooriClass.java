@@ -12,6 +12,7 @@ public abstract class WooriClass implements Identifiable {
     protected Collection<Resource> resources;
     protected Collection<Staff> staff;
     protected Collection<Student> students;
+    protected Event event;
 
     public WooriClass() {}
 
@@ -37,6 +38,14 @@ public abstract class WooriClass implements Identifiable {
 
     public void setStudents(Collection<Student> students) {
         this.students = students;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
     @Override
