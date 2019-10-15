@@ -9,8 +9,8 @@ import java.util.Collection;
 public class Event implements Identifiable {
 
     private int id;
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
+    private LocalDateTime startDateTime;
+    private LocalDateTime endDateTime;
     private String address;
     private String description;
     private Collection<WooriClass> wooriClasses;
@@ -26,12 +26,12 @@ public class Event implements Identifiable {
         this.id = id;
     }
 
-    public void setStartTime(LocalDateTime startTime) {
-        this.startTime = startTime;
+    public void setStartDateTime(LocalDateTime startDateTime) {
+        this.startDateTime = startDateTime;
     }
 
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
+    public void setEndDateTime(LocalDateTime endDateTime) {
+        this.endDateTime = endDateTime;
     }
 
     public void setAddress(String address) {
@@ -46,12 +46,12 @@ public class Event implements Identifiable {
         this.wooriClasses = wooriClasses;
     }
 
-    public LocalDateTime getStartTime() {
-        return startTime;
+    public LocalDateTime getStartDateTime() {
+        return startDateTime;
     }
 
-    public LocalDateTime getEndTime() {
-        return endTime;
+    public LocalDateTime getEndDateTime() {
+        return endDateTime;
     }
 
     public String getAddress() {
