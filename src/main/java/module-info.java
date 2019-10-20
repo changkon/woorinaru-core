@@ -6,4 +6,6 @@ module woorinaru.core {
     // Exports SPI and API
     exports woorinaru.core.dao.spi;
     exports woorinaru.core.service;
+    // Command
+    exports woorinaru.core.command;
 }
