@@ -5,6 +5,7 @@ import woorinaru.core.model.user.Staff;
 import woorinaru.core.model.user.Student;
 
 import java.util.Collection;
+import java.util.Collections;
 
 public abstract class WooriClass implements Identifiable {
 
@@ -55,6 +56,48 @@ public abstract class WooriClass implements Identifiable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public boolean addResource(Resource resource) {
+        if (resources == null) {
+            resources = Collections.emptyList();
+        }
+        return resources.add(resource);
+    }
+
+    public boolean addStaff(Staff staff) {
+        if (this.staff == null) {
+            this.staff = Collections.emptyList();
+        }
+        return this.staff.add(staff);
+    }
+
+    public boolean addStudent(Student student) {
+        if (students == null) {
+            this.students = Collections.emptyList();
+        }
+        return this.students.add(student);
+    }
+
+    public boolean removeResource(int id) {
+        if (resources == null) {
+            return false;
+        }
+        return resources.removeIf(resource -> resource.getId() == id);
+    }
+
+    public boolean removeStaff(int id) {
+        if (staff == null) {
+            return false;
+        }
+        return this.staff.removeIf(staff -> staff.getId() == id);
+    }
+
+    public boolean removeStudent(int id) {
+        if (students == null) {
+            return false;
+        }
+        return this.students.removeIf(student -> student.getId() == id);
     }
 
     public abstract Grade getGrade();

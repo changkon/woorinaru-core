@@ -5,6 +5,7 @@ import woorinaru.core.model.user.Staff;
 
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Term implements Identifiable {
@@ -65,5 +66,19 @@ public class Term implements Identifiable {
 
     public void setEvents(List<Event> events) {
         this.events = events;
+    }
+
+    public boolean addEvent(Event event) {
+        if (events == null) {
+            events = Collections.emptyList();
+        }
+        return events.add(event);
+    }
+
+    public boolean removeEvent(int id) {
+        if (events == null) {
+            return false;
+        }
+        return events.removeIf(event -> event.getId() == id);
     }
 }

@@ -5,6 +5,7 @@ import woorinaru.core.model.management.administration.Resource;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.Collections;
 
 public abstract class User implements Identifiable {
 
@@ -63,5 +64,19 @@ public abstract class User implements Identifiable {
 
     public void setSignUpDateTime(LocalDateTime signupDateTime) {
         this.signUpDateTime = signupDateTime;
+    }
+
+    public boolean addFavouriteResource(Resource resource) {
+        if (favouriteResources == null) {
+            favouriteResources = Collections.emptyList();
+        }
+        return favouriteResources.add(resource);
+    }
+
+    public boolean removeFavouriteResource(int resourceId) {
+        if (favouriteResources == null) {
+            return false;
+        }
+        return favouriteResources.removeIf(resource -> resource.getId() == resourceId);
     }
 }
