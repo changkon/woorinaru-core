@@ -4,8 +4,8 @@ import woorinaru.core.model.base.Identifiable;
 import woorinaru.core.model.user.Staff;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class Term implements Identifiable {
@@ -70,7 +70,7 @@ public class Term implements Identifiable {
 
     public boolean addEvent(Event event) {
         if (events == null) {
-            events = Collections.emptyList();
+            events = new ArrayList<>();
         }
         return events.add(event);
     }
@@ -84,7 +84,7 @@ public class Term implements Identifiable {
 
     public boolean addStaff(Staff staff) {
         if (staffMembers == null) {
-            staffMembers = Collections.emptyList();
+            staffMembers = new ArrayList<>();
         }
         return staffMembers.add(staff);
     }

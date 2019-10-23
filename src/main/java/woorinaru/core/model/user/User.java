@@ -4,8 +4,8 @@ import woorinaru.core.model.base.Identifiable;
 import woorinaru.core.model.management.administration.Resource;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 public abstract class User implements Identifiable {
 
@@ -68,7 +68,7 @@ public abstract class User implements Identifiable {
 
     public boolean addFavouriteResource(Resource resource) {
         if (favouriteResources == null) {
-            favouriteResources = Collections.emptyList();
+            favouriteResources = new ArrayList<>();
         }
         return favouriteResources.add(resource);
     }

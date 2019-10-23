@@ -4,8 +4,8 @@ import woorinaru.core.model.base.Identifiable;
 import woorinaru.core.model.user.Staff;
 import woorinaru.core.model.user.Student;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 public abstract class WooriClass implements Identifiable {
 
@@ -60,21 +60,21 @@ public abstract class WooriClass implements Identifiable {
 
     public boolean addResource(Resource resource) {
         if (resources == null) {
-            resources = Collections.emptyList();
+            resources = new ArrayList<>();
         }
         return resources.add(resource);
     }
 
     public boolean addStaff(Staff staff) {
         if (this.staff == null) {
-            this.staff = Collections.emptyList();
+            this.staff = new ArrayList<>();
         }
         return this.staff.add(staff);
     }
 
     public boolean addStudent(Student student) {
         if (students == null) {
-            this.students = Collections.emptyList();
+            this.students = new ArrayList<>();
         }
         return this.students.add(student);
     }
