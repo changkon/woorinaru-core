@@ -1,6 +1,5 @@
 package woorinaru.core.service;
 
-import woorinaru.core.command.UpdateCommand;
 import woorinaru.core.dao.spi.GenericDao;
 import woorinaru.core.model.user.User;
 
@@ -31,7 +30,7 @@ public abstract class AbstractGenericService<E, D extends GenericDao<E>> impleme
     }
 
     @Override
-    public void modify(UpdateCommand<E> e) {
+    public void modify(E e) {
         dao.modify(e);
     }
 
