@@ -8,4 +8,6 @@ module woorinaru.core {
     exports woorinaru.core.service;
     // Command
     exports woorinaru.core.command;
+    // Exception
+    exports woorinaru.core.exception;
 }

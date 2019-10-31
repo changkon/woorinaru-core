@@ -4,7 +4,6 @@ import woorinaru.core.dao.spi.GenericDao;
 import woorinaru.core.model.user.User;
 
 import java.util.List;
-import java.util.Optional;
 
 public abstract class AbstractGenericService<E, D extends GenericDao<E>> implements GenericService<E>, UserAuthService {
 
@@ -15,12 +14,12 @@ public abstract class AbstractGenericService<E, D extends GenericDao<E>> impleme
     public AbstractGenericService() {}
 
     @Override
-    public void create(E e) {
-        dao.create(e);
+    public int create(E e) {
+        return dao.create(e);
     }
 
     @Override
-    public Optional<E> get(int id) {
+    public E get(int id) {
         return dao.get(id);
     }
 
