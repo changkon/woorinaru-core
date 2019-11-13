@@ -28,6 +28,10 @@ public enum Role {
     }
 
     public static Role fromUser(User user) {
+        if (Objects.isNull(user)) {
+            return VISITOR;
+        }
+
         if (user instanceof Admin) {
             return ADMIN;
         } else if (user instanceof Staff) {

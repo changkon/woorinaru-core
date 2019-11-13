@@ -1,14 +1,23 @@
 package com.woorinaru.core.model.role;
 
-import com.woorinaru.core.model.user.Admin;
-import com.woorinaru.core.model.user.Staff;
-import com.woorinaru.core.model.user.StaffRole;
-import com.woorinaru.core.model.user.Student;
+import com.woorinaru.core.model.user.*;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class RoleTest {
+
+    @Test
+    public void testNullUserReturnsVisitorRole() {
+        // GIVEN
+        User user = null;
+
+        // WHEN
+        Role role = Role.fromUser(user);
+
+        // THEN
+        assertThat(role).isEqualTo(Role.VISITOR);
+    }
 
     @Test
     public void testAdminReturnsAdminRole() {
