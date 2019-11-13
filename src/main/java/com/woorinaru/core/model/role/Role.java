@@ -58,4 +58,29 @@ public enum Role {
 
         throw new IllegalArgumentException("Unknown user type");
     }
+
+    public static Role fromRole(String role) {
+        if (Objects.isNull(role)) {
+            throw new IllegalArgumentException("Cannot map role from null");
+        }
+
+        switch(role) {
+            case "admin":
+                return ADMIN;
+            case "leader":
+                return LEADER;
+            case "vice_leader":
+                return VICE_LEADER;
+            case "sub_leader":
+                return SUB_LEADER;
+            case "teacher":
+                return TEACHER;
+            case "student":
+                return STUDENT;
+            case "visitor":
+                return VISITOR;
+        }
+
+        throw new IllegalArgumentException("Unknown user type");
+    }
 }
