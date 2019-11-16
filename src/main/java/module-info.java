@@ -3,7 +3,7 @@ module com.woorinaru.core {
     exports com.woorinaru.core.model.base;
     exports com.woorinaru.core.model.management.administration;
     exports com.woorinaru.core.model.user;
-    exports com.woorinaru.core.model.role;
+    exports com.woorinaru.core.model.security;
     // Exports SPI and API
     exports com.woorinaru.core.dao.spi;
     exports com.woorinaru.core.service;

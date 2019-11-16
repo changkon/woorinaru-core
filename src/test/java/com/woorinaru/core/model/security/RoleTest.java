@@ -1,4 +1,4 @@
-package com.woorinaru.core.model.role;
+package com.woorinaru.core.model.security;
 
 import com.woorinaru.core.model.user.*;
 import org.junit.Test;

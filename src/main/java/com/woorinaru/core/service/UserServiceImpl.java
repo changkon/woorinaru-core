@@ -8,7 +8,7 @@ import com.woorinaru.core.model.user.User;
 
 import java.util.Objects;
 
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, UserAuthService {
 
     private UserDao userDao;
     private User userContext;
