@@ -19,6 +19,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getByEmail(String email) {
+        return this.userDao.getByEmail(email);
+    }
+
+    @Override
     public void modifyUserType(User user, Class<? extends User> userType) {
         if (isAllowedToModifyUserType(user, userType)) {
             this.userDao.modifyUserType(user, userType);
