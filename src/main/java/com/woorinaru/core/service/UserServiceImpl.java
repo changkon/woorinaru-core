@@ -59,11 +59,11 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-    public UserDao getUserDao() {
+    public UserDao getDao() {
         return userDao;
     }
 
-    public void setUserDao(UserDao userDao) {
+    public void setDao(UserDao userDao) {
         this.userDao = userDao;
     }
 
