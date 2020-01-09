@@ -15,6 +15,8 @@ public abstract class User implements Identifiable {
     protected String email;
     protected Collection<Resource> favouriteResources;
     protected LocalDateTime signUpDateTime;
+    protected LocalDateTime createDateTime;
+    protected LocalDateTime updateDateTime;
 
     public User() {}
 
@@ -78,5 +80,23 @@ public abstract class User implements Identifiable {
             return false;
         }
         return favouriteResources.removeIf(resource -> resource.getId() == resourceId);
+    }
+
+    @Override
+    public LocalDateTime getCreateDateTime() {
+        return createDateTime;
+    }
+
+    public void setCreateDateTime(LocalDateTime createDateTime) {
+        this.createDateTime = createDateTime;
+    }
+
+    @Override
+    public LocalDateTime getUpdateDateTime() {
+        return updateDateTime;
+    }
+
+    public void setUpdateDateTime(LocalDateTime updateDateTime) {
+        this.updateDateTime = updateDateTime;
     }
 }

@@ -1,20 +1,20 @@
-package com.woorinaru.core.model.management.administration;
+package com.woorinaru.core.model.notification;
 
 import com.woorinaru.core.model.base.Identifiable;
+import com.woorinaru.core.model.management.administration.Grade;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-public class Resource implements Identifiable {
-
+public class PushNotification implements Identifiable {
     private int id;
-    private String description;
-    private String location;
+    private String deviceToken;
+    private List<Grade> subscribedGrades;
     private LocalDateTime createDateTime;
     private LocalDateTime updateDateTime;
 
-    public Resource() {}
+    public PushNotification() {}
 
-    @Override
     public int getId() {
         return id;
     }
@@ -23,20 +23,20 @@ public class Resource implements Identifiable {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDeviceToken() {
+        return deviceToken;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDeviceToken(String deviceToken) {
+        this.deviceToken = deviceToken;
     }
 
-    public String getLocation() {
-        return location;
+    public List<Grade> getSubscribedGrades() {
+        return subscribedGrades;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setSubscribedGrades(List<Grade> subscribedGrades) {
+        this.subscribedGrades = subscribedGrades;
     }
 
     @Override

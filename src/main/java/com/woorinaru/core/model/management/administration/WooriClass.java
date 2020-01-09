@@ -4,6 +4,7 @@ import com.woorinaru.core.model.base.Identifiable;
 import com.woorinaru.core.model.user.Staff;
 import com.woorinaru.core.model.user.Student;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -14,6 +15,8 @@ public abstract class WooriClass implements Identifiable {
     protected Collection<Staff> staff;
     protected Collection<Student> students;
     protected Event event;
+    protected LocalDateTime createDateTime;
+    protected LocalDateTime updateDateTime;
 
     public WooriClass() {}
 
@@ -98,6 +101,24 @@ public abstract class WooriClass implements Identifiable {
             return false;
         }
         return this.students.removeIf(student -> student.getId() == id);
+    }
+
+    @Override
+    public LocalDateTime getCreateDateTime() {
+        return createDateTime;
+    }
+
+    public void setCreateDateTime(LocalDateTime createDateTime) {
+        this.createDateTime = createDateTime;
+    }
+
+    @Override
+    public LocalDateTime getUpdateDateTime() {
+        return updateDateTime;
+    }
+
+    public void setUpdateDateTime(LocalDateTime updateDateTime) {
+        this.updateDateTime = updateDateTime;
     }
 
     public abstract Grade getGrade();

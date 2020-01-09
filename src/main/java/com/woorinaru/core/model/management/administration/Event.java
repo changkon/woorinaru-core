@@ -16,6 +16,8 @@ public class Event implements Identifiable {
     private String description;
     private Collection<WooriClass> wooriClasses;
     private Collection<Student> studentReservations;
+    private LocalDateTime createDateTime;
+    private LocalDateTime updateDateTime;
 
     public Event() {}
 
@@ -102,5 +104,23 @@ public class Event implements Identifiable {
             return false;
         }
         return this.studentReservations.removeIf(student -> student.getId() == id);
+    }
+
+    @Override
+    public LocalDateTime getCreateDateTime() {
+        return createDateTime;
+    }
+
+    public void setCreateDateTime(LocalDateTime createDateTime) {
+        this.createDateTime = createDateTime;
+    }
+
+    @Override
+    public LocalDateTime getUpdateDateTime() {
+        return updateDateTime;
+    }
+
+    public void setUpdateDateTime(LocalDateTime updateDateTime) {
+        this.updateDateTime = updateDateTime;
     }
 }

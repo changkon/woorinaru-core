@@ -4,6 +4,7 @@ import com.woorinaru.core.model.base.Identifiable;
 import com.woorinaru.core.model.user.Staff;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -16,6 +17,8 @@ public class Term implements Identifiable {
     private LocalDate startDate;
     private LocalDate endDate;
     private List<Event> events;
+    private LocalDateTime createDateTime;
+    private LocalDateTime updateDateTime;
 
     public Term() {}
 
@@ -94,5 +97,23 @@ public class Term implements Identifiable {
             return false;
         }
         return staffMembers.removeIf(staff -> staff.getId() == id);
+    }
+
+    @Override
+    public LocalDateTime getCreateDateTime() {
+        return createDateTime;
+    }
+
+    public void setCreateDateTime(LocalDateTime createDateTime) {
+        this.createDateTime = createDateTime;
+    }
+
+    @Override
+    public LocalDateTime getUpdateDateTime() {
+        return updateDateTime;
+    }
+
+    public void setUpdateDateTime(LocalDateTime updateDateTime) {
+        this.updateDateTime = updateDateTime;
     }
 }
