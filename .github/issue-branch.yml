@@ -1,0 +1,21 @@
+mode: chatops
+branchName: 'woorinaru-core-i${issue.number}_${issue.title}'
+autoCloseIssue: true
+branches:
+    - label: enchancement
+      name: develop
+      prefix: feature/
+    - label: bug
+      name: develop
+      prefix: bugfix/
+    - label: chore
+      name: develop
+      prefix: chore/
+    - label: test
+      name: develop
+      prefix: test/
+    - label: urgent
+      name: master
+      prefix: hotfix/
+    - label: '*'
+      skip: true
